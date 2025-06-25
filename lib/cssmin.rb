@@ -88,7 +88,7 @@ module CSSMin
 
     # Convert rgb color values to hex values.
     css = css.gsub(/rgb\s*\(\s*([0-9,\s]+)\s*\)/) do |match|
-      '#' << $1.scan(/\d+/).map{|n| n.to_i.to_s(16).rjust(2, '0') }.join
+      '#' + $1.scan(/\d+/).map{|n| n.to_i.to_s(16).rjust(2, '0') }.join
     end
 
     # Compress color hex values, making sure not to touch values used in IE
